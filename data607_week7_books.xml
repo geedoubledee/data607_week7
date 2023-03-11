@@ -1,0 +1,35 @@
+<BOOKTABLE>
+  <BOOK>
+    <TITLE>The Warded Man</TITLE>
+    <AUTHOR>Peter V. Brett</AUTHOR>
+	<SERIES>The Demon Cycle</SERIES>
+	<SERIES_NUM>1</SERIES_NUM>
+	<PAGES>416</PAGES>
+	<FORMAT>Hardcover</FORMAT>
+	<ON_SALE>9/1/2008</ON_SALE>
+	<GENRE_PRIMARY>Fantasy</GENRE_PRIMARY>
+    <SUMMARY_FIRST_SENTENCE>As darkness falls after sunset, the corelings rise—demons who possess supernatural powers and burn with a consuming hatred of humanity.</SUMMARY_FIRST_SENTENCE>
+  </BOOK>
+  <BOOK>
+    <TITLE>The War of the Flowers</TITLE>
+    <AUTHOR>Tad Williams</AUTHOR>
+	<SERIES>NA</SERIES>
+	<SERIES_NUM>NA</SERIES_NUM>
+	<PAGES>828</PAGES>
+	<FORMAT>Mass Market</FORMAT>
+	<ON_SALE>4/22/2003</ON_SALE>
+	<GENRE_PRIMARY>Fantasy</GENRE_PRIMARY>
+    <SUMMARY_FIRST_SENTENCE>Theo Vilmos' life is about to take a real turn for the worse.</SUMMARY_FIRST_SENTENCE>
+  </BOOK>
+  <BOOK>
+    <TITLE>A Memory of Light</TITLE>
+    <AUTHOR>Robert Jordan, Brandon Sanderson</AUTHOR>
+	<SERIES>The Wheel of Time</SERIES>
+	<SERIES_NUM>14</SERIES_NUM>
+	<PAGES>912</PAGES>
+	<FORMAT>Hardcover</FORMAT>
+	<ON_SALE>1/8/2013</ON_SALE>
+	<GENRE_PRIMARY>Fantasy</GENRE_PRIMARY>
+    <SUMMARY_FIRST_SENTENCE>The Wheel of Time turns and Ages come and go, leaving memories that become legend.</SUMMARY_FIRST_SENTENCE>
+  </BOOK>
+</BOOKTABLE>

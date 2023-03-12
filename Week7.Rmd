@@ -1,0 +1,84 @@
+---
+title: "Data 607 - Week 7"
+author: "Glen Dale Davis"
+date: "2023-03-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load the Packages:
+
+Below, the packages required for data collection and display are loaded.  
+
+```{r packages, message = FALSE, warning = FALSE}
+library(tidyverse)
+library(DT)
+
+```
+
+## Load the Data from HTML:
+
+Below, we load the data from an HTML source. We isolate the table container and convert it to a dataframe. 
+
+```{r data_html}
+my_url1 <- "https://raw.githubusercontent.com/geedoubledee/data607_week7/main/data607_week7_books.html"
+dat1 <- xml2::read_html(my_url1)
+books_html <- xml2::xml_find_all(dat1, "//table")
+books_html <- as.data.frame(rvest::html_table(books_html)[[1]])
+rownames(books_html) <- NULL
+datatable(books_html, rownames = FALSE, options = list(scrollX = TRUE))
+
+```
+
+## Load the Data from XML:
+
+Below, we load the data from an XML source. We unnest the main container, BOOKTABLE, into a wider format so that we have the correct number of correctly named columns. Then we unlist the contents of each column so that we have the correct row data. We replace "NA" strings with NA values, and we convert a couple character columns to integer type.
+
+```{r data_xml}
+my_url2 <- "https://raw.githubusercontent.com/geedoubledee/data607_week7/main/data607_week7_books.xml"
+dat2 <- xml2::as_list(xml2::read_xml(my_url2))
+books_xml <- tibble::as_tibble(dat2) %>%
+    unnest_wider(BOOKTABLE)
+for (i in 1:ncol(books_xml)){
+    books_xml[, i] <- unlist(books_xml[, i])
+}
+books_xml <- as.data.frame(books_xml)
+rownames(books_xml) <- NULL
+books_xml[books_xml == "NA"] <- NA
+books_xml$SERIES_NUM <- as.integer(books_xml$SERIES_NUM)
+books_xml$PAGES <- as.integer(books_xml$PAGES)
+datatable(books_xml, rownames = FALSE, options = list(scrollX = TRUE))
+
+```
+
+## Load the Data from JSON:
+
+Below, we load the data from a JSON source. We convert the column names to uppercase since the object literal names in the JSON source had to be lowercase. We make the same adjustments we had to make to the XML data frame regarding NA values and character-to-integer column types. 
+
+```{r data_json}
+
+my_url3 <- "https://raw.githubusercontent.com/geedoubledee/data607_week7/main/data607_week7_books.json"
+books_json <- jsonlite::fromJSON(my_url3)
+rownames(books_json) <- NULL
+colnames(books_json) <- toupper(colnames(books_json))
+books_json[books_json == "NA"] <- NA
+books_json$SERIES_NUM <- as.integer(books_json$SERIES_NUM)
+books_json$PAGES <- as.integer(books_json$PAGES)
+datatable(books_json, rownames = FALSE, options = list(scrollX = TRUE))
+
+```
+
+## Confirm the Data Frames Loaded from Each Source Are Identical:
+
+Below, we confirm that the dataframes we have created are identical. Even though the data were loaded from different sources, we were able to account for that and make small adjustments to ensure uniformity.
+
+```{r identical}
+
+(identical(books_html, books_xml))
+(identical(books_xml, books_json))
+(identical(books_html, books_json))
+
+```

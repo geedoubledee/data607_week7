@@ -1,0 +1,35 @@
+[
+	{
+		"title": "The Warded Man",
+		"author": "Peter V. Brett",
+		"series": "The Demon Cycle",
+		"series_num": "1",
+		"pages": "416",
+		"format": "Hardcover",
+		"on_sale": "9/1/2008",
+		"genre_primary": "Fantasy",
+		"summary_first_sentence": "As darkness falls after sunset, the corelings rise—demons who possess supernatural powers and burn with a consuming hatred of humanity."
+	},
+	{
+		"title": "The War of the Flowers",
+		"author": "Tad Williams",
+		"series": "NA",
+		"series_num": "NA",
+		"pages": "828",
+		"format": "Mass Market",
+		"on_sale": "4/22/2003",
+		"genre_primary": "Fantasy",
+		"summary_first_sentence": "Theo Vilmos' life is about to take a real turn for the worse."
+	},
+	{
+		"title": "A Memory of Light",
+		"author": "Robert Jordan, Brandon Sanderson",
+		"series": "The Wheel of Time",
+		"series_num": "14",
+		"pages": "912",
+		"format": "Hardcover",
+		"on_sale": "1/8/2013",
+		"genre_primary": "Fantasy",
+		"summary_first_sentence": "The Wheel of Time turns and Ages come and go, leaving memories that become legend."
+	}
+]
